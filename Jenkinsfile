@@ -70,7 +70,7 @@ pipeline {
                         
 		        
 			aws ecs register-task-definition --cli-input-json file://web-server.json
-			aws ecs run-task --cluster nodejs-cluster --task-definition web-server
+			
 			ClusterUpdate=`aws ecs update-service --cluster nodejs-cluster --service nodejs-service --task-definition web-server --desired-count 0`
 			 
       
